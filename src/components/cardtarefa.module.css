@@ -1,0 +1,31 @@
+.main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.span{
+    font-size: 20px;
+    font-weight: 600;
+    width: 85%;
+}
+
+.checkbox{
+    height: 16px;
+    width: 16px;
+}
+
+.iconeLixeira{
+    color: #FFFFFF;
+    background-color: red;
+    height: 28px;
+    width: 28px;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.iconeLixeira:hover{
+    opacity: 0.7;
+}

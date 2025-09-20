@@ -1,0 +1,24 @@
+{
+  "name": "todo-list",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "json": "npx json-server --watch data/db.json --port 8000",
+    "server": "npm-run-all --parallel json dev"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.0",
+    "next": "^15.5.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3"
+  }
+}
