@@ -8,7 +8,7 @@ export default function Home() {
   const [inputTarefa, setInputTarefa] = useState("");
   const [tarefas, setTarefas] = useState([]);
   const [loading, setLoading] = useState(true);
-  const url = "http://localhost:8080/api/todos";
+  const url = "http://localhost:25000/api/todos";
 
   const getAllTarefas = async () => {
     setLoading(true);
