@@ -54,6 +54,8 @@ export default function Home() {
       setTarefas(tarefas.filter(tarefa => tarefa.id !== id));
     } catch (error) {
       console.error("Falha ao deletar tarefa:", error);
+    } finally {
+      await getAllTarefas();
     }
   };
 
