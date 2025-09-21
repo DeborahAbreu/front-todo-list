@@ -15,9 +15,11 @@ export default function Home() {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      setTarefas(data);
+      const tarefasRecebidas = Array.isArray(data) ? data : [];
+      setTarefas(tarefasRecebidas);
     } catch (error) {
       console.error("Falha ao buscar tarefas:", error);
+      setTarefas([]);
     } finally {
       setLoading(false);
     }
@@ -104,7 +106,7 @@ export default function Home() {
             </button>
           </div>
           <ul className={styles.ul}>
-            {loading ? <p>Carregando...</p> : (
+            {loading && tarefas.length == 0 ? <p>Carregando...</p> : (
               tarefas.map((tarefa) => (
                 <li className={styles.li} key={tarefa.id}>
                   <CardTarefa
