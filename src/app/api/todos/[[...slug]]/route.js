@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 // A URL do seu back-end, usando o IP PRIVADO.
 // O ideal é usar uma variável de ambiente para isso!
-const BACKEND_URL = 'http://10.0.2.50:25000/api/todos';
+const BACKEND_URL = 'http://10.0.3.193:25000/api/todos';
 
 // Função genérica para repassar a requisição
 async function forwardRequest(request, slug) {
@@ -47,4 +47,5 @@ export async function PUT(request, { params }) {
 
 export async function DELETE(request, { params }) {
     return forwardRequest(request, params.slug);
+
 }
