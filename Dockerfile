@@ -1,17 +1,16 @@
-FROM node:20-alpine
+FROM node:20.11-alpine
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY package.json package-lock.json* ./
 
-COPY *-lock.yaml ./
-
-RUN apk add --no-cache make gcc g++ python3
-
-RUN npm install
+RUN apk add --no-cache make gcc g++ python3 && \
+    npm ci --only=production
 
 COPY . .
 
+RUN npm run build
+
 EXPOSE 3000
 
-CMD ["npm","run","start"]
+CMD ["npm", "run", "start"]
